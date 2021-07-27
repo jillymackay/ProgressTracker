@@ -15,4 +15,11 @@ dat %>%
   filter(trait %in% c("written", "unwritten")) %>% 
   ggplot(aes(x = 1, y = words, fill = trait)) +
   geom_bar(stat = "identity") +
-  coord_flip()
+  nord::scale_fill_nord(palette = "lumina") +
+  theme_classic() +
+  coord_flip()+
+  theme(axis.title.y=element_blank(),
+        axis.text.y=element_blank(),
+        axis.ticks.y=element_blank()) 
+
+ggsave("output.png")
