@@ -3,7 +3,7 @@ library(tidyverse)
 
 
 dat <- tibble(goal = 20000,
-              written = 10136) %>% 
+              written = 10522) %>% 
   mutate(perc = written/goal,
          unwritten = goal-written) %>% 
   pivot_longer(cols = c(goal:unwritten),
